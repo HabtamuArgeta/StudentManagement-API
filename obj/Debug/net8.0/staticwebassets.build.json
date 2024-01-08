@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "5/TZ4Nd/3H0+2NRaSmVV1IlZ0mr+6mtlS5An9MqFWsM=",
+  "Hash": "1fPua5DOO73kBmI8aJhfva6ipnCZO06JVUmlDbadOng=",
   "Source": "StudentManagement",
   "BasePath": "_content/StudentManagement",
   "Mode": "Default",
@@ -16,6 +16,63 @@
     }
   ],
   "Assets": [
+    {
+      "Identity": "C:\\Program Files\\installed apps\\Linux comanned\\crzylearning\\DotNet Apps\\StudentManagement\\wwwroot\\photo\\_IMG_20230208_133451.jpg",
+      "SourceId": "StudentManagement",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Program Files\\installed apps\\Linux comanned\\crzylearning\\DotNet Apps\\StudentManagement\\wwwroot\\",
+      "BasePath": "_content/StudentManagement",
+      "RelativePath": "photo/_IMG_20230208_133451.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\photo\\_IMG_20230208_133451.jpg"
+    },
+    {
+      "Identity": "C:\\Program Files\\installed apps\\Linux comanned\\crzylearning\\DotNet Apps\\StudentManagement\\wwwroot\\photo\\_IMG_20230505_090741.jpg",
+      "SourceId": "StudentManagement",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Program Files\\installed apps\\Linux comanned\\crzylearning\\DotNet Apps\\StudentManagement\\wwwroot\\",
+      "BasePath": "_content/StudentManagement",
+      "RelativePath": "photo/_IMG_20230505_090741.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\photo\\_IMG_20230505_090741.jpg"
+    },
+    {
+      "Identity": "C:\\Program Files\\installed apps\\Linux comanned\\crzylearning\\DotNet Apps\\StudentManagement\\wwwroot\\photo\\_photo_2023-11-02_04-22-26-removebg-preview.png",
+      "SourceId": "StudentManagement",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Program Files\\installed apps\\Linux comanned\\crzylearning\\DotNet Apps\\StudentManagement\\wwwroot\\",
+      "BasePath": "_content/StudentManagement",
+      "RelativePath": "photo/_photo_2023-11-02_04-22-26-removebg-preview.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\photo\\_photo_2023-11-02_04-22-26-removebg-preview.png"
+    },
     {
       "Identity": "C:\\Program Files\\installed apps\\Linux comanned\\crzylearning\\DotNet Apps\\StudentManagement\\wwwroot\\photo\\12_IMG_20230505_090741.jpg",
       "SourceId": "StudentManagement",
@@ -72,25 +129,6 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\photo\\659470dcce381958d60b4eda_IMG_20230505_090741.jpg"
-    },
-    {
-      "Identity": "C:\\Program Files\\installed apps\\Linux comanned\\crzylearning\\DotNet Apps\\StudentManagement\\wwwroot\\photo\\trgfgddfsdfnm_IMG_20230505_090741.jpg",
-      "SourceId": "StudentManagement",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Program Files\\installed apps\\Linux comanned\\crzylearning\\DotNet Apps\\StudentManagement\\wwwroot\\",
-      "BasePath": "_content/StudentManagement",
-      "RelativePath": "photo/trgfgddfsdfnm_IMG_20230505_090741.jpg",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "PreferTarget",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\photo\\trgfgddfsdfnm_IMG_20230505_090741.jpg"
     }
   ]
 }

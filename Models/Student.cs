@@ -1,5 +1,6 @@
 ﻿using MongoDB.Bson.Serialization.Attributes;
 using MongoDB.Bson;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace StudentManagement.Models
 {
@@ -14,12 +15,11 @@ namespace StudentManagement.Models
         public string Name { get; set; } = String.Empty;
 
         [BsonElement("photoUrl")]
-        public string? PhotoUrl { get; set; } // Property to store the URL of the photo
+        public string? PhotoUrl { get; set; }
+
         [BsonElement("graduated")]
         public bool IsGraduated { get; set; }
 
-        [BsonElement("courses")]
-        public string[]? Courses { get; set; }
 
         [BsonElement("gender")]
         public string Gender { get; set; } = String.Empty;

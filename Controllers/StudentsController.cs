@@ -65,7 +65,7 @@ namespace StudentManagement.Controllers
 
         // PUT api/<StudentsController>/5
         [HttpPut("{id}")]
-        public IActionResult Put(string id, [FromBody] Student updatedStudent)
+        public async Task<ActionResult<Student>> Put(string id,[FromForm] Student updatedStudent, IFormFile photo)
         {
             var existingStudent = studentService.Get(id);
 
@@ -73,11 +73,27 @@ namespace StudentManagement.Controllers
             {
                 return NotFound($"Student with Id = {id} not found");
             }
+            if (photo != null)
+            {
+                var fileName = $"{updatedStudent.Id}_{photo.FileName}";
+                var filePath = Path.Combine("wwwroot", "photo", fileName); // Specify the directory where photos will be saved
+
+                using (var fileStream = new FileStream(filePath, FileMode.Create))
+                {
+                    await photo.CopyToAsync(fileStream);
+                }
+
+                var photoUrl = $"/wwwroot/photo/{fileName}"; // Constructing the URL where the photo will be accessible
+
+                updatedStudent.PhotoUrl = photoUrl; // Save the photo URL to the Student model
+            }
 
             studentService.Update(id, updatedStudent);
 
             return Ok($"Student with Id = {id} updated");
         }
+
+
 
         // DELETE api/<StudentsController>/5
         [HttpDelete("{id}")]

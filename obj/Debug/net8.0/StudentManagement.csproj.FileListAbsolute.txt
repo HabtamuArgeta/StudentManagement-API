@@ -44,3 +44,4 @@ C:\Program Files\installed apps\Linux comanned\crzylearning\DotNet Apps\StudentM
 C:\Program Files\installed apps\Linux comanned\crzylearning\DotNet Apps\StudentManagement\obj\Debug\net8.0\StudentManagement.genruntimeconfig.cache
 C:\Program Files\installed apps\Linux comanned\crzylearning\DotNet Apps\StudentManagement\obj\Debug\net8.0\ref\StudentManagement.dll
 C:\Program Files\installed apps\Linux comanned\crzylearning\DotNet Apps\StudentManagement\bin\Debug\net8.0\StudentManagement.staticwebassets.runtime.json
+C:\Program Files\installed apps\Linux comanned\crzylearning\DotNet Apps\StudentManagement\obj\Debug\net8.0\StudentManagement.sourcelink.json
