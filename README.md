@@ -204,6 +204,27 @@ public class StudentsController : ControllerBase
         return Ok($"Student with Id = {id} deleted");
     }
 }
+
+<br/><br/>Configure Services 
+<br/>In Program.cs file, configure the required services.
+<br/>
+var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.Configure<StudentStoreDatabaseSettings>(
+                builder.Configuration.GetSection(nameof(StudentStoreDatabaseSettings)));
+
+builder.Services.AddSingleton<IStudentStoreDatabaseSettings>(sp =>
+    sp.GetRequiredService<IOptions<StudentStoreDatabaseSettings>>().Value);
+
+builder.Services.AddSingleton<IMongoClient>(s =>
+        new MongoClient(builder.Configuration.GetValue<string>("StudentStoreDatabaseSettings:ConnectionString")));
+
+builder.Services.AddScoped<IStudentService, StudentService>();
+
+<br/><br/>Test REST API using Swagger
+<br/>With Swagger it's easy to test the API calls directly in the browser.
+<br/>
+
 <br/><br/>-feel free to contact me if you got in to any problem during set up
 -DM me via habtamu.argeta-ug@aau.edu.et<br/>
 <br/><br/>If you got this repo helpful , give one star to it !
