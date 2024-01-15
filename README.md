@@ -44,20 +44,20 @@ Add Models folder and place the following Student.cs class file in it. When stud
 MongoDB connection string in ASP.NET Core
 Store MongoDB connection information in appsettings.json file.
 
-{
-  "StudentStoreDatabaseSettings": {
-    "StudentCoursesCollectionName": "studentcourses",
-    "ConnectionString": "Your_MongoDB_ConnectionString",
-    "DatabaseName": "myFirstDatabase"
-  },
-  "Logging": {
-    "LogLevel": {
-      "Default": "Information",
-      "Microsoft.AspNetCore": "Warning"
-    }
-  },
-  "AllowedHosts": "*"
-}
+<br/>{
+ <br/> "StudentStoreDatabaseSettings": {
+   <br/> "StudentCoursesCollectionName": "studentcourses",
+    <br/>"ConnectionString": "Your_MongoDB_ConnectionString",
+   <br/> "DatabaseName": "myFirstDatabase"
+ <br/> },
+<br/>  "Logging": {
+  <br/>  "LogLevel": {
+   <br/>   "Default": "Information",
+    <br/>  "Microsoft.AspNetCore": "Warning"
+   <br/> }
+ <br/> },
+ <br/> "AllowedHosts": "*"
+<br/>}
 
 <br/><br/>-feel free to contact me if you got in to any problem during set up
 -DM me via habtamu.argeta-ug@aau.edu.et<br/>
