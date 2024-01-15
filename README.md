@@ -79,8 +79,131 @@ Store MongoDB connection information in appsettings.json file.
    <br/> public string DatabaseName { get; set; } = String.Empty;
 <br/>}
 
-<br/><br/>How to call MongoDB API from C#<br/><br/>
+<br/><br/>How to call MongoDB API from C#<br/>
+<br/>-For separation of concerns we will keep the code that calls Mongo API in a separate service layer.
+<br/>-ASP.NET Web API Controller calls this service. 
+<br/>-Add Services folder and place the 2 files in it (IStudentService.cs and StudentService.cs)
+<br/><br/>IStudentService.cs
+<br/>public interface IStudentService
+<br/>{
+  <br/>  List<Student> Get();
+   <br/> Student Get(string id);
+   <br/> Student Create(Student student);
+   <br/> void Update(string id, Student student);
+   <br/> void Remove(string id);
+<br/>}
+<br/>StudentService.cs<br/>
+public class StudentService : IStudentService
+{
+    private readonly IMongoCollection<Student> _students;
 
+    public StudentService(IStudentStoreDatabaseSettings settings, IMongoClient mongoClient)
+    {
+        var database = mongoClient.GetDatabase(settings.DatabaseName);
+        _students = database.GetCollection<Student>(settings.StudentCoursesCollectionName);
+    }
+
+    public Student Create(Student student)
+    {
+        _students.InsertOne(student);
+        return student;
+    }
+
+    public List<Student> Get()
+    {
+        return _students.Find(student => true).ToList();
+    }
+
+    public Student Get(string id)
+    {
+        return _students.Find(student => student.Id == id).FirstOrDefault();
+    }
+
+    public void Remove(string id)
+    {
+        _students.DeleteOne(student => student.Id == id);
+    }
+
+    public void Update(string id, Student student)
+    {
+        _students.ReplaceOne(student => student.Id == id, student);
+    }
+}
+
+<br/><br/>ASP.NET Core REST API Controller<br/>
+<br/>Add the following StudentsController.cs file in the Controllers folder.
+[Route("api/[controller]")]
+[ApiController]
+public class StudentsController : ControllerBase
+{
+    private readonly IStudentService studentService;
+
+    public StudentsController(IStudentService studentService)
+    {
+        this.studentService = studentService;
+    }
+    // GET: api/<StudentsController>
+    [HttpGet]
+    public ActionResult<List<Student>> Get()
+    {
+        return studentService.Get();
+    }
+
+    // GET api/<StudentsController>/5
+    [HttpGet("{id}")]
+    public ActionResult<Student> Get(string id)
+    {
+        var student = studentService.Get(id);
+
+        if (student == null)
+        {
+            return NotFound($"Student with Id = {id} not found");
+        }
+
+        return student;
+    }
+
+    // POST api/<StudentsController>
+    [HttpPost]
+    public ActionResult<Student> Post([FromBody] Student student)
+    {
+        studentService.Create(student);
+
+        return CreatedAtAction(nameof(Get), new { id = student.Id }, student);
+    }
+
+    // PUT api/<StudentsController>/5
+    [HttpPut("{id}")]
+    public ActionResult Put(string id, [FromBody] Student student)
+    {
+        var existingStudent = studentService.Get(id);
+
+        if (existingStudent == null)
+        {
+            return NotFound($"Student with Id = {id} not found");
+        }
+
+        studentService.Update(id, student);
+
+        return NoContent();
+    }
+
+    // DELETE api/<StudentsController>/5
+    [HttpDelete("{id}")]
+    public ActionResult Delete(string id)
+    {
+        var student = studentService.Get(id);
+
+        if (student == null)
+        {
+            return NotFound($"Student with Id = {id} not found");
+        }
+
+        studentService.Remove(student.Id);
+
+        return Ok($"Student with Id = {id} deleted");
+    }
+}
 <br/><br/>-feel free to contact me if you got in to any problem during set up
 -DM me via habtamu.argeta-ug@aau.edu.et<br/>
 <br/><br/>If you got this repo helpful , give one star to it !
