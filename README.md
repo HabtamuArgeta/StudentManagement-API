@@ -1,5 +1,5 @@
 
--This isASP.NET  web API for student managment system , you can download and test it 
+-This is ASP.NET  web API for student managment system , you can download and test it 
 <br/><br/>
 ###Here is some Explanation 
 <br/><br/>
@@ -227,4 +227,4 @@ builder.Services.AddScoped<IStudentService, StudentService>();
 
 <br/><br/>-feel free to contact me if you got in to any problem during set up
 -DM me via habtamu.argeta-ug@aau.edu.et<br/>
-<br/><br/>If you got this repo helpful , give one star to it !
+<br/>If you got this repo helpful , give one star to it !
