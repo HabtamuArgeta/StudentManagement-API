@@ -59,6 +59,28 @@ Store MongoDB connection information in appsettings.json file.
  <br/> "AllowedHosts": "*"
 <br/>}
 
+<br/><br/>Add the following 2 files in the Models folder. This interface and the class provide strongly typed access to MongoDB connection information.
+
+<br/>1IStudentStoreDatabaseSettings.cs
+<br/>2StudentStoreDatabaseSettings.cs
+
+<br/>IStudentStoreDatabaseSettings.cs
+<br/>public interface IStudentStoreDatabaseSettings
+<br/>{
+  <br/>  string StudentCoursesCollectionName { get; set; }
+   <br/> string ConnectionString { get; set; }
+   <br/> string DatabaseName { get; set; }
+<br/>}
+<br/>StudentStoreDatabaseSettings.cs
+<br/>public class StudentStoreDatabaseSettings : IStudentStoreDatabaseSettings
+<br/>{
+  <br/>  public string StudentCoursesCollectionName { get; set; } = String.Empty;
+  <br/>  public string ConnectionString { get; set; } = String.Empty;
+   <br/> public string DatabaseName { get; set; } = String.Empty;
+<br/>}
+
+<br/><br/>How to call MongoDB API from C#<br/><br/>
+
 <br/><br/>-feel free to contact me if you got in to any problem during set up
 -DM me via habtamu.argeta-ug@aau.edu.et<br/>
 <br/><br/>If you got this repo helpful , give one star to it !
